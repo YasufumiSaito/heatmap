@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="utf-8">
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <head>
+  	<title>Japanese Consumption</title>
+  	<meta property="og:image" content="https://i.giphy.com/3o7rc6Uacgb1hHubHa.gif" />
+	<meta name="description" content="昔に比べて日本人はお金を使っているの？３５年間の消費トレンドをデータビジュアライゼーションで表してみた / 35 years of Japanese Consumption Trend Visualized" />
+	<meta property="og:title" content="Japanese Consumption" />
+	<meta property="og:url" content="https://YasufumiSaito.github.io/consumption/" />
+	<meta name="twitter:card" content="player">
+	<meta name="twitter:site" content="@yas104">
+	<meta name="twitter:creator" content="@yas104">
+	<meta name="twitter:title" content="Japanese Consumption">
+	<meta name="twitter:description" content="昔に比べて日本人はお金を使っているの？３５年間の消費トレンドをデータビジュアライゼーションで表してみた / 35 years of Japanese Consumption Trend Visualized">
+	<meta name="twitter:image:src" content="https://i.giphy.com/3o7rc6Uacgb1hHubHa.gif">
+	<link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+  	<div id="header">
+		<div class="onoffswitch">
+		    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" value="off" checked>
+			    <label class="onoffswitch-label" for="myonoffswitch">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
+		</div>
+	</div>
+  	<div id="intro" class="en">
+
+		<h1 id="head" class="en">Japanese Consumption</h1>
+		<div id="story" class="en">
+			<p>Personal consumption is the engine of the Japanese economy, accounting for 60% of its GDP. The trend will determine tomorrow's economic climate in the country. In other words, whether Japanese economy is going to be healthy depends on how people spend money.</p>
+			<p><span>Do people in Japan spend more money than they did in the past?</span> The heatmap below answers the question. It visualizes the monthly Index of Consumption Expenditure Level over the past 35 years. Thick color means higher consumption level, and vice versa.</p>
+		</div>
+
+	</div>
+
+	<div id="intro" class="jp">
+
+		<h1 id="head_jp" class="jp">日本人の消費動向</h1>
+		<div id="story" class="jp">
+			<p>個人消費はGDPのうち最も大きな割合ー60%ーを占める経済のエンジンだ。その動向は明日の景気を左右する。つまり、日本経済が良くなるかどうかはみんながお金を使うかどうかに掛かっている。</p>
+			<p><span>最近の日本人は昔に比べてお金を使っているのだろうか？</span>下のヒートマップはその答えを教えてくれる。月ごとの消費水準指数を３５年分並べたもので、色が濃い所は消費が多く、薄いと少ない。</p>
+		</div>
+
+	</div>
+
+  	<div id="dataset-picker">
+  		<button id="mainButton" value="data.csv" type="button" class="dataset-button"><p class="jp">総合消費</p><p class="en">General</p></button>
+  		<button value="食料.csv" type="button" class="dataset-button"><p class="jp">食料</p><p class="en">Food</p></button>
+  		<button value="住居.csv" type="button" class="dataset-button"><p class="jp">住居</p><p class="en">Housing</p></button>
+  		<button value="光熱費.csv" type="button" class="dataset-button"><p class="jp">光熱費</p><p class="en">Fuel</p></button>
+  		<button value="家具&amp;日用品.csv" type="button" class="dataset-button"><p class="jp">家具&日用品</p><p class="en">Furniture</p></button>
+  		<button value="ファッション.csv" type="button" class="dataset-button"><p class="jp">ファッション</p><p class="en">Clothing</p></button>
+  		<button value="医療費.csv" type="button" class="dataset-button"><p class="jp">医療費</p><p class="en">Medical care</p></button>
+  		<button value="交通＆通信.csv" type="button" class="dataset-button"><p class="jp">交通＆通信</p><p class="en">Transportation & Communication</p></button>
+  		<button value="教育.csv" type="button" class="dataset-button"><p class="jp">教育</p><p class="en">Education</p></button>
+  		<button value="教養娯楽.csv" type="button" class="dataset-button"><p class="jp">教養娯楽</p><p class="en">Recreation</p></button>
+  	</div>
+
+  	<div id="wrapper">
+		<div id="container">
+		    <div id="tooltip">
+			</div>
+		</div>
+	</div>
+
+	<div id="intro" class="en">
+
+		<div id="story" class="en">
+			<p class="second">"General" shows the entire trend, and the other buttons display subcategories. The heatmap tells us that Japanese consumption hit a peak in the mid '90s, after the bubble burst, and then people became to spend less money on fashion and food, or deflation might affect.</p>
+			<p>The government and the Bank of Japan see the current consumption level as <a href="https://www.boj.or.jp/mopo/mpmsche_minu/minu_2015/g151119.pdf" target="_blank">"steady."</a> What do you see from the visualization? Do you think it's enduring one way or another?</p>
+			<p id="annotation" class="annotation">※The Index of Consumption Expenditure Level: It is calculated on the monthly amount of expenditures per household, eliminating the effects of inflation and the number of household members. 100 indicates the consumption level in 2010, the base year.</p>
+		</div>
+
+	</div>
+
+	<div id="intro" class="jp">
+
+		<div id="story" class="jp">
+			<p class="second">全体の傾向を示す総合消費を始め、ボタンを押すとカテゴリごとの消費動向が表示される。このヒートマップからは、バブル崩壊後、９０年代半ばに消費のピークを迎えた日本人が、次第にファッションや食事にお金を使わなくなった（もしくはデフレで使う額が減った）姿がくっきりと浮かび上がる。</p>
+			<p>政府と日銀は<a href="https://www.boj.or.jp/mopo/mpmsche_minu/minu_2015/g151119.pdf" target="_blank">「消費は底堅い」</a>としている。底堅いとは本来金融用語で、もっと相場が下がりそうなのに意外と下がらないことを意味する。あなたの見方はどうだろう？踏みとどまっているように見えるだろうか？</p>
+			<p class="annotation">※消費水準指数:　１世帯当たりの月々の消費支出金額を基に世帯規模や物価変動の影響を取り除いた指数で、家計の消費水準をより的確に把握することができるとされる。基準値として２０１０年を１００としている。総務省統計局発表。</p>
+		</div>
+
+	</div>
+
+    <div id="footer">
+
+	    <div id="colophon">
+	      DATA SOURCE <a href="http://www.stat.go.jp/data/kakei/longtime/index.htm#level" target="_blank">Statistics Bureau at Ministry of Internal Affairs and Communications</a><br/>
+	      CREATED BY <a href="http://yasufumisaito.github.io/" target="_blank">&nbsp;Yasufumi Saito</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://twitter.com/yas104" target="_blank">@yas104</a>&nbsp;&nbsp;
+	      <br />
+	      
+	      SHARE THIS ON <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://YasufumiSaito.github.io/consumption/">&nbsp;FACEBOOK</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank "href="https://twitter.com/intent/tweet?text=Check this DataVis%20via%20@yas104%20https://YasufumiSaito.github.io/consumption/">TWITTER</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="https://www.linkedin.com/shareArticle?url=https://YasufumiSaito.github.io/consumption/">LINKEDIN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="http://b.hatena.ne.jp/add?url=https://YasufumiSaito.github.io/consumption/">HATENA</a>
+	    </div>
+
+	</div>
+    <!-- Language Change -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+	$(".jp").css("display", "none");
+	$("#myonoffswitch").click(function(){
+		$(".en").toggle();
+		$(".jp").toggle();	
+	});
+	</script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="main.js"></script>      
+    </body>
+</html>
